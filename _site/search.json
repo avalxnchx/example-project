@@ -2,9 +2,9 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "example-project",
+    "title": "Census Mini Project",
     "section": "",
-    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites.\n\n1 + 1\n\n[1] 2"
+    "text": "library(tidycensus)\noptions(tigris_use_cache = TRUE)\n\ndc_income <- get_acs(\n  geography = \"tract\", \n  variables = \"B19013_001\",\n  state = \"DC\", \n  year = 2020,\n  geometry = TRUE\n)\n\nGetting data from the 2016-2020 5-year ACS\n\nplot(dc_income[\"estimate\"])"
   },
   {
     "objectID": "about.html",
